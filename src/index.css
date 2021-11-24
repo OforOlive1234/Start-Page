@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  font-family: 'Lato', Tahoma, Verdana, sans-serif;
+  background-color: #1c1b26;
+  color: #fff;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.link:hover {
+  color: #aadce6;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 5.0rem;
+  font-weight: bold;
+  padding-top: 5%;
+  text-align: center;
+}
+
+.date {
+  font-weight: lighter;
+  font-size: 1.5rem;
+}

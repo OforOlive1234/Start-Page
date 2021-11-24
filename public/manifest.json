@@ -1,0 +1,9 @@
+{
+  "name": "start-page",
+  "version": "0.1.0",
+  "description": "My New Tab for Chrome",
+  "author": "Me",
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  }
+}
