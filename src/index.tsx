@@ -11,6 +11,18 @@ const links = [
   {name: "EP", link: "https://www.educationperfect.com/app/#/dashboard/french/"}
 ]
 
+interface period {
+  name: string,
+  begin: Date,
+  end: Date,
+  week_a: boolean
+}
+
+
+
+// create a timetable with input of a list of periods
+
+
 function Links(){
   return (
     <div className="links">
@@ -95,7 +107,7 @@ function Weather() {
           (weather.description === "thunderstorm") ? "http://openweathermap.org/img/wn/11d.png" :
           (weather.description === "snow") ? "http://openweathermap.org/img/wn/13d.png" :
           (weather.description === "mist") ? "http://openweathermap.org/img/wn/50d.png": "I'm sure it's a sunny day!"}
-        width="80px" alt={weather.description}/><p className="smallText">{Math.round(weather.temp - 273.15)} &deg;C</p>
+        width="80px" alt={weather.description}/><p className="smallText"> {Math.round(weather.temp - 273.15)} &deg;C</p>
     </span>
     );
   }
@@ -106,6 +118,7 @@ function App() {
     <div className="App">
       <Weather />
       <Time />
+      <br />
       <br />
       <Links />
     </div>
