@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+// in the future: make multiple map lists for different kinds of links
+
 const links = [
   {name: "Connect", link: "https://connect.det.wa.edu.au/group/students/ui/overview"},
   {name: "Outlook", link: "https://outlook.office.com/mail/inbox"},
@@ -10,18 +12,6 @@ const links = [
   {name: "Gmail", link: "https://mail.google.com/mail/u/0/"},
   {name: "EP", link: "https://www.educationperfect.com/app/#/dashboard/french/"}
 ]
-
-interface period {
-  name: string,
-  begin: Date,
-  end: Date,
-  week_a: boolean
-}
-
-
-
-// create a timetable with input of a list of periods
-
 
 function Links(){
   return (
@@ -106,21 +96,27 @@ function Weather() {
           (weather.description === "rain") ? "http://openweathermap.org/img/wn/10d.png" :
           (weather.description === "thunderstorm") ? "http://openweathermap.org/img/wn/11d.png" :
           (weather.description === "snow") ? "http://openweathermap.org/img/wn/13d.png" :
-          (weather.description === "mist") ? "http://openweathermap.org/img/wn/50d.png": "I'm sure it's a sunny day!"}
+          (weather.description === "mist") ? "http://openweathermap.org/img/wn/50d.png": "I'm sure it's a sunny day! (it broke lol)"}
         width="80px" alt={weather.description}/><p className="smallText"> {Math.round(weather.temp - 273.15)} &deg;C</p>
     </span>
     );
   }
 }
 
+function Container() {
+  return(
+    <div>
+      <Weather />
+      <Time />
+      <Links/>
+    </div>
+  )
+}
+
 function App() {
   return (
     <div className="App">
-      <Weather />
-      <Time />
-      <br />
-      <br />
-      <Links />
+     <Container />
     </div>
   );
 }
