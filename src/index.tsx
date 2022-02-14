@@ -105,10 +105,11 @@ function Weather() {
 
 function Container() {
   return(
-    <div>
+    <div className="container">
       <Weather />
       <Time />
       <Links/>
+      <p id="center">Made by <a href="https://github.com/OforOlive1234">Me</a></p>
     </div>
   )
 }

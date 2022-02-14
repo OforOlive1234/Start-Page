@@ -1,9 +1,28 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 @import url(https://fonts.googleapis.com/css2?family=Cousine);
+
 body {
   font-family: 'Lato', Tahoma, Verdana, sans-serif;
-  background-color: #23272A;
-  color: #F6F6F6
+  color: #F6F6F6;
+  background-image: url("bg.jpg");
+  background-size: 1920px 1080px;
+}
+
+#center {
+  padding-top: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: rgba(10, 20, 40, 0.7);
+  width: 30%;
+  padding: 50px;
+  border-radius: 8px;
+  margin: auto;
+  margin-top: 5vw;
 }
 
 .links {
@@ -15,13 +34,13 @@ body {
   text-align: center;
 }
 
-.link {
+a {
   text-decoration: none;
   color: #F6F6F6;
 }
 
-.link:hover {
-  color: #7ec9e0;
+a:hover {
+  color: rgb(126, 201, 224);
 }
 
 .time {
@@ -33,11 +52,13 @@ body {
   font-weight: bold;
   text-align: center;
   font-family: 'Cousine', monospace;
+  padding-bottom: 3vw;
 }
 
 .date {
   font-weight: lighter;
   font-size: 1.5rem;
+  font-family: 'Lato', Tahoma, Verdana, sans-serif;
 }
 
 .weather {
