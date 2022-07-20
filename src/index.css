@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
-@import url(https://fonts.googleapis.com/css2?family=Cousine);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
+
+
 
 body {
   font-family: 'Lato', Tahoma, Verdana, sans-serif;
@@ -20,7 +22,7 @@ body {
   background-color: rgba(10, 20, 40, 0.7);
   width: 30%;
   padding: 50px;
-  border-radius: 8px;
+  border-radius: 12px;
   margin: auto;
   margin-top: 5vw;
 }
@@ -51,7 +53,7 @@ a:hover {
   font-size: 5.0rem;
   font-weight: bold;
   text-align: center;
-  font-family: 'Cousine', monospace;
+  font-family: 'Roboto Mono', monospace;
   padding-bottom: 3vw;
 }
 
