@@ -4,34 +4,8 @@ import './index.css';
 
 // in the future: make multiple map lists for different kinds of links
 
-const periods = [
-  {name: 'Advocacy', start: 9, end: 10}
-];
-
-//  in the future: Measure everything in minutes (e.g 3 hours = 180 minutes) in terms of timetable useEffect()
-
-
-// HUZZAH
-
-  // function Timetable(){
-  //  return (
-  //    <div className="timetable">
-  //      {periods.map(period => (
-  //        <div className="period">
-  //          <div className="name">{period.name}</div>
-  //          <div>{period.start} - {period.end}</div>
-  //        </div>
-  //        ))}
-  //    </div>
-  //  );
-  //}
-  //  
-  // 
-
-
 const links = [
   {name: "Connect", link: "https://connect.det.wa.edu.au/group/students/ui/overview"},
-  {name: "Compass", link: "https://perthmodern-wa.compass.education/"},
   {name: "Outlook", link: "https://outlook.office.com/mail/inbox"},
   {name: "Mathspace", link: "https://mathspace.co"},
   {name: "GitHub", link: "https://github.com"},
@@ -63,13 +37,13 @@ function Time(){
     <div className="time">
       <div>{time.getHours().toString().length === 1 ? "0" + time.getHours() : time.getHours()}:{time.getMinutes().toString().length === 1 ? "0" + time.getMinutes() : time.getMinutes()}:{time.getSeconds().toString().length === 1 ? "0" + time.getSeconds() : time.getSeconds()}</div>
     <div className="date">{[
-      "Sunday",
       "Monday",
       "Tuesday",
       "Wednesday",
       "Thursday",
       "Friday",
-      "Saturday"
+      "Saturday",
+      "Sunday"
     ][time.getDay()]} {time.getDate().toString()} {[
       "January",
       "February",
@@ -101,19 +75,6 @@ function getWeatherData() {
   )
 }
 
-const Search = () => {
-        //switch() {
-        //  case 'Google':
-        //  
-        //  case 'Bing':
-        //  
-        //  case 'Qwant':
-    const [search, setSearch] = useState('');
-    return(
-      <input>s</input>
-    )
-  }
-
 function Weather() {
   const [weather, setWeather] = useState<{temp: any, description: any, icon: any}|null>(null)
 
@@ -127,7 +88,7 @@ function Weather() {
     return (
     <span className="weather">
       <img src={
-          (weather.description === "clear sky") ? "http://openweathermap.org/img/wn/01d.png" : // work of art, certified nft ($6000 to screenshot)
+          (weather.description === "clear sky") ? "http://openweathermap.org/img/wn/01d.png" :
           (weather.description === "few clouds") ? "http://openweathermap.org/img/wn/02d.png" :
           (weather.description === "scattered clouds") ? "http://openweathermap.org/img/wn/03d.png" :
           (weather.description === "broken clouds") ? "http://openweathermap.org/img/wn/04d.png" :
@@ -136,20 +97,27 @@ function Weather() {
           (weather.description === "thunderstorm") ? "http://openweathermap.org/img/wn/11d.png" :
           (weather.description === "snow") ? "http://openweathermap.org/img/wn/13d.png" :
           (weather.description === "mist") ? "http://openweathermap.org/img/wn/50d.png": "I'm sure it's a sunny day! (it broke lol)"}
-        width="80px" alt={weather.description}/><p className="smallText"> <a href="http://www.bom.gov.au/wa/forecasts/perth.shtml"> {Math.round(weather.temp - 273.15)} &deg;C </a></p>
+        width="80px" alt={weather.description}/><p className="smallText"> {Math.round(weather.temp - 273.15)} &deg;C</p>
     </span>
     );
   }
 }
 
-//in the future: have two columns, one for weather, one for timetable
+//timetable
+
+const timetable = [
+  {
+    name: "Science",
+    time: []
+     
+    }
+]
+
 
 function Container() {
   return(
     <div className="container">
-      <div>
-        <Weather />
-      </div>
+      <Weather />
       <Time />
       <Links/>
       <p id="center">Made by <a href="https://github.com/OforOlive1234">Me</a></p>
